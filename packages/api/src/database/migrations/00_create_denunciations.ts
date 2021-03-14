@@ -4,8 +4,8 @@ export async function up(knex: Knex) {
   return knex.schema.createTable('denunciations', table => {
     table.increments('id').primary()
     table.string('image_url').notNullable()
-    table.decimal('latitude', 2, 7).notNullable()
-    table.decimal('longitude', 2, 7).notNullable()
+    table.decimal('latitude', null).notNullable()
+    table.decimal('longitude', null).notNullable()
     table.text('description').notNullable()
     table.boolean('resolved').defaultTo(false).notNullable()
     table.timestamps(true, true)
