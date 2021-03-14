@@ -49,8 +49,8 @@ class DenunciationsController {
 
       const denunciation = {
         image_url: file.location,
-        latitude,
-        longitude,
+        latitude: String(latitude),
+        longitude: String(longitude),
         description
       }
     
@@ -66,8 +66,8 @@ class DenunciationsController {
     try {
       const {
         image_url,
-        latitude,
         longitude,
+        latitude,
         description,
         resolved = false,
       } = request.body
@@ -77,8 +77,8 @@ class DenunciationsController {
         .where({ id })
         .update({
           image_url,
-          latitude,
-          longitude,
+          latitude: String(latitude),
+          longitude: String(longitude),
           description,
           resolved,
         })
