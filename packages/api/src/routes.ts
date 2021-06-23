@@ -1,5 +1,4 @@
 import express, { Request, Response } from 'express'
-import { celebrate, Joi } from 'celebrate'
 import jwt from 'jsonwebtoken'
 
 import multer from 'multer'
@@ -15,7 +14,7 @@ const denunciationsController = new DenunciationsController()
 const usersController = new UsersController()
 
 const authenticateToken = async (request: Request, response: Response, next: any) => {
-  const token = request.headers['x-access-token'] as string
+  let [, token] = <[string, string]>request.headers.authorization?.split(' ')
 
   if (!token) return response.status(401)
 
@@ -23,37 +22,33 @@ const authenticateToken = async (request: Request, response: Response, next: any
     if (error) {
       return response.status(401).json({ error: 'Token inválido.' })
     }
-    console.log(user)
-    next()
   })
+  const user = jwt.decode(token, {json: true})
+  request.app.locals = user as object
+  return next()
 }
 
 routes.get('/users', usersController.index)
-routes.get('/login', usersController.show)
+routes.post('/login', usersController.show)
 routes.post('/users', usersController.create)
 routes.get('/logout', (request: Request, response: Response) => {
   return response.json({ auth: false, token: null })
 })
 
+/* routes.get('/denunciations', authenticateToken, denunciationsController.index)
+routes.get('/denunciations/:id', authenticateToken, denunciationsController.show) */
 routes.get('/denunciations', denunciationsController.index)
 routes.get('/denunciations/:id', denunciationsController.show)
 
 routes.post(
   '/denunciations', 
-  upload.single('file'), 
-  celebrate({
-    body: Joi.object().keys({
-      description: Joi.string(),
-      latitude: Joi.number().required(),
-      longitude: Joi.number().required(),
-    })
-  }, {
-    abortEarly: false
-  }),
+  upload.array('file', 1),
   denunciationsController.create
 )
 
-routes.put('/denunciations/:id', authenticateToken, denunciationsController.update)
+/* routes.put('/denunciations/:id', authenticateToken, denunciationsController.update)
+routes.delete('/denunciations/:id', authenticateToken, denunciationsController.delete) */
+routes.put('/denunciations/:id', denunciationsController.update)
 routes.delete('/denunciations/:id', denunciationsController.delete)
 
 routes.all('/*', (request: Request, response: Response) => {

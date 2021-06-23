@@ -6,6 +6,8 @@ export async function up(knex: Knex) {
     table.string('username').notNullable().unique()
     table.string('password').notNullable()
     table.integer('level').notNullable()
+    table.date('created_at').notNullable()
+    table.date('updated_at').notNullable()
   })
 }
 

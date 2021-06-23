@@ -8,7 +8,7 @@ class UsersController {
     try {
       const users = await knex('users')
       .distinct()
-    
+
       return response.json(users)
     } catch (error) {
       next(error)
@@ -17,7 +17,7 @@ class UsersController {
 
   async show(request: Request, response: Response, next: any) {
     try {
-      const { username, password } = request.body
+      const { username, password } = request.body.body
 
       if (!username) {
         return response.status(400).json({ error: 'O campo usuário é obrigatório.' })
@@ -39,11 +39,11 @@ class UsersController {
         return response.status(401).json({ message: 'Senha incorreta.' })
       }
 
-      const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string, {
+      const token = jwt.sign({ id: user.id, level: user.level }, process.env.JWT_SECRET as string, {
         expiresIn: '7d'
       })
 
-      return response.json({ auth: true, token })
+      return response.json({ auth: true, level: user.level, token })
     } catch (error) {
       next(error)
     }
@@ -54,7 +54,7 @@ class UsersController {
       const {
         username,
         password,
-        level = 1
+        level,
       } = request.body
 
       if (!username || !password) {
@@ -79,16 +79,18 @@ class UsersController {
       const user = {
         username,
         password: hash,
-        level
+        level,
+        created_at: new Date(),
+        updated_at: new Date(),
       }
 
       const insertedId = await knex('users').insert(user)
       
-      const token = jwt.sign({ id: insertedId[0] }, process.env.JWT_SECRET as string, {
+      const token = jwt.sign({ id: insertedId[0], level }, process.env.JWT_SECRET as string, {
         expiresIn: '7d'
       })
 
-      return response.json({ auth: true, token })
+      return response.json({ auth: true, level, token })
     } catch (error) {
       next(error)
     }

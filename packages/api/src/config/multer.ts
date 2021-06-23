@@ -3,6 +3,7 @@ import path from 'path'
 import { v4 as uuid } from 'uuid'
 import aws from 'aws-sdk'
 import multerS3 from 'multer-s3'
+import multer from 'multer'
 
 require('dotenv').config({path: '.env'})
 
@@ -29,3 +30,13 @@ export default {
     }
   })
 }
+
+/* export default {
+  dest: './uploads',
+  storage: multer.diskStorage({
+    destination: path.resolve(__dirname, '..', '..', 'uploads'),
+    filename: (req, file, callback) => {
+      callback(null, uuid() + path.extname(file.originalname))
+    }
+  })
+} */
