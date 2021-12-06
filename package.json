@@ -1,0 +1,36 @@
+{
+  "name": "denuncia-de-aglomeracao",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "api:start": "yarn workspace @denuncia-de-aglomeracao/api node dist/src/server.js",
+    "api:dev": "NODE_ENV=development yarn workspace @denuncia-de-aglomeracao/api ts-node-dev --ignore-watch node_modules src/server.ts",
+    "api:prod": "yarn workspace @denuncia-de-aglomeracao/api NODE_ENV=production ts-node --ignore-watch node_modules src/server.ts",
+    "api:build": "yarn workspace @denuncia-de-aglomeracao/api tsc -p .",
+    "mobile:android:clean": "yarn workspace @denuncia-de-aglomeracao/mobile cd android && ./gradlew clean && cd ..",
+    "mobile:android": "yarn workspace @denuncia-de-aglomeracao/mobile react-native run-android",
+    "mobile:ios": "yarn workspace @denuncia-de-aglomeracao/mobile react-native run-ios",
+    "mobile:start": "yarn workspace @denuncia-de-aglomeracao/mobile react-native start",
+    "mobile:test": "yarn workspace @denuncia-de-aglomeracao/mobile jest",
+    "mobile:lint": "yarn workspace @denuncia-de-aglomeracao/mobile eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.3",
+    "ts-jest": "^27.1.0",
+    "typescript": "^4.5.2"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "author": "Leonardo Lima <leonardo1230987@gmail.com>",
+  "license": "ISC",
+  "engines": {
+    "node": "14.18.1",
+    "npm": "6.14.15"
+  }
+}
