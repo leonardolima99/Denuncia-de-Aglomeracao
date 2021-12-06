@@ -8,7 +8,6 @@ on:
       - 'packages/api/**'
 #      - 'packages/web/**'
 #      - 'packages/axios-config/**'
-  
 
 jobs:
   deploy:
@@ -23,6 +22,5 @@ jobs:
         with:
           node-version: 14.x
 
-        - name: Deploy
-          run: echo "Deployed"
-
+      - name: Deploy
+        run: echo "Deployed"
