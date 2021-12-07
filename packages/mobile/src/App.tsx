@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { StatusBar, useColorScheme } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
-import RNBootSplash from 'react-native-bootsplash'
+/* import RNBootSplash from 'react-native-bootsplash' */
 
 /* import { AuthProvider } from './contexts/auth' */
 
@@ -34,7 +34,8 @@ export default function App() {
     }
 
     init() /* .finally(async () => {
-      RNBootSplash.hide({ fade: true })
+      await RNBootSplash.hide({ fade: true })
+      console.log('Bootsplash has been hidden successfully')
     }) */
   }, [])
   return (
@@ -47,7 +48,7 @@ export default function App() {
         />
       )}
 
-      <NavigationContainer onReady={() => RNBootSplash.hide({ fade: true })}>
+      <NavigationContainer>
         {/* <AuthProvider>
         </AuthProvider> */}
         <Routes />

@@ -1,8 +1,8 @@
 package com.leonardollc.denunciadeaglomeracao;
 
 import com.facebook.react.ReactActivity;
-import com.facebook.react.ReactActivityDelegate; // <- add this necessary import
-import com.zoontek.rnbootsplash.RNBootSplash; // <- add this necessary import
+/* import com.facebook.react.ReactActivityDelegate; // <- add this necessary import
+import com.zoontek.rnbootsplash.RNBootSplash; // <- add this necessary import */
 
 public class MainActivity extends ReactActivity {
 
@@ -15,7 +15,7 @@ public class MainActivity extends ReactActivity {
     return "leonardollc.denunciadeaglomeracao";
   }
 
-  @Override
+  /* @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
     return new ReactActivityDelegate(this, getMainComponentName()) {
 
@@ -25,5 +25,5 @@ public class MainActivity extends ReactActivity {
         super.loadApp(appKey);
       }
     };
-  }
+  } */
 }
