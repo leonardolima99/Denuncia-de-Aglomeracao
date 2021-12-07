@@ -1,14 +1,14 @@
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
 
-import Home from '../pages/Home';
-import Denunciations from '../pages/Denunciations';
-import BackToMap from '../pages/BackToMap';
-import Detail from '../pages/Detail';
-import NewDenunciation from '../pages/NewDenunciation';
-import SignIn from '../pages/SignIn';
+import Home from '../pages/Home'
+import Denunciations from '../pages/Denunciations'
+import BackToMap from '../pages/BackToMap'
+import Detail from '../pages/Detail'
+import NewDenunciation from '../pages/NewDenunciation'
+import SignIn from '../pages/SignIn'
 
-const UserStack = createStackNavigator();
+const UserStack = createStackNavigator()
 
 const UserRoutes: React.FC = () => (
   <UserStack.Navigator headerMode="none">
@@ -19,6 +19,6 @@ const UserRoutes: React.FC = () => (
     <UserStack.Screen name="NewDenunciation" component={NewDenunciation} />
     <UserStack.Screen name="SignIn" component={SignIn} />
   </UserStack.Navigator>
-);
+)
 
-export default UserRoutes;
+export default UserRoutes

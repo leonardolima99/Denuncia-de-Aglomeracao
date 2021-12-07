@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "mobile2.app"
-               BlueprintName = "mobile2"
-               ReferencedContainer = "container:mobile2.xcodeproj">
+               BuildableName = "leonardollc.denunciadeaglomeracao.app"
+               BlueprintName = "leonardollc.denunciadeaglomeracao"
+               ReferencedContainer = "container:leonardollc.denunciadeaglomeracao.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "mobile2Tests.xctest"
-               BlueprintName = "mobile2Tests"
-               ReferencedContainer = "container:mobile2.xcodeproj">
+               BuildableName = "leonardollc.denunciadeaglomeracaoTests.xctest"
+               BlueprintName = "leonardollc.denunciadeaglomeracaoTests"
+               ReferencedContainer = "container:leonardollc.denunciadeaglomeracao.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "mobile2.app"
-            BlueprintName = "mobile2"
-            ReferencedContainer = "container:mobile2.xcodeproj">
+            BuildableName = "leonardollc.denunciadeaglomeracao.app"
+            BlueprintName = "leonardollc.denunciadeaglomeracao"
+            ReferencedContainer = "container:leonardollc.denunciadeaglomeracao.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "mobile2.app"
-            BlueprintName = "mobile2"
-            ReferencedContainer = "container:mobile2.xcodeproj">
+            BuildableName = "leonardollc.denunciadeaglomeracao.app"
+            BlueprintName = "leonardollc.denunciadeaglomeracao"
+            ReferencedContainer = "container:leonardollc.denunciadeaglomeracao.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

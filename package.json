@@ -16,6 +16,7 @@
     "mobile:lint": "yarn workspace @denuncia-de-aglomeracao/mobile eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "devDependencies": {
+    "@denuncia-de-aglomeracao/eslint-config": "*",
     "@types/bcryptjs": "^2.4.2",
     "@types/jest": "^27.0.3",
     "jest": "^27.4.3",
