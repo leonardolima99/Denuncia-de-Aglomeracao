@@ -32,29 +32,5 @@
         />
 
   </item>
-  <!--
-<item
-    android:top="120dp">
-  <bitmap
-
-      android:src="@mipmap/logo"
-      android:gravity="top"
-      />
-
-</item>
-
-  <item
-      android:top="-100dp"
-      android:bottom="100dp"
-      android:drawable="@mipmap/text1"
-      android:gravity="center"/>
-
-  <item
-      android:top="800dp"
-      android:bottom="50dp"
-      android:drawable="@mipmap/text2"
-      android:gravity="center"/>
-
-
--->
+  
 </layer-list>
