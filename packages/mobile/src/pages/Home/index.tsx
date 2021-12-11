@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Icon from 'react-native-vector-icons/Feather'
+import Feather from 'react-native-vector-icons/Feather'
 
 import {
   View,
@@ -11,12 +11,12 @@ import {
   Platform
 } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
-import { useNavigation } from '@react-navigation/native'
+/* import { useNavigation } from '@react-navigation/native' */
 
 /* import {useAuth} from '../../contexts/auth'; */
 
 const Home = () => {
-  const navigation = useNavigation()
+  /* const navigation = useNavigation() */
 
   function handleNavigateToDenunciations() {
     /* navigation.navigate('Denunciations'); */
@@ -25,13 +25,11 @@ const Home = () => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      // eslint-disable-next-line react-native/no-inline-styles
       style={{ flex: 1 }}
     >
       <ImageBackground
         source={require('../../assets/home-background.png')}
         style={styles.container}
-        // eslint-disable-next-line react-native/no-inline-styles
         imageStyle={{ width: 274, height: 368, opacity: 0.1 }}
       >
         <View style={styles.main}>
@@ -52,7 +50,7 @@ const Home = () => {
           >
             <View style={styles.buttonIcon}>
               <Text>
-                <Icon name="arrow-right" color="#FFF" size={24} />
+                <Feather name="arrow-right" color="#FFF" size={24} />
               </Text>
             </View>
             <Text style={styles.buttonText}>Entrar</Text>
