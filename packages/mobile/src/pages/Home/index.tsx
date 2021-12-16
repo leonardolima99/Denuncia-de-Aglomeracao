@@ -8,18 +8,19 @@ import {
   Text,
   StyleSheet,
   KeyboardAvoidingView,
-  Platform
+  Platform,
+  Image
 } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
-/* import { useNavigation } from '@react-navigation/native' */
+import { useNavigation } from '@react-navigation/native'
 
 /* import {useAuth} from '../../contexts/auth'; */
 
 const Home = () => {
-  /* const navigation = useNavigation() */
+  const navigation = useNavigation()
 
   function handleNavigateToDenunciations() {
-    /* navigation.navigate('Denunciations'); */
+    navigation.navigate('Denunciations')
   }
 
   return (
@@ -33,7 +34,6 @@ const Home = () => {
         imageStyle={{ width: 274, height: 368, opacity: 0.1 }}
       >
         <View style={styles.main}>
-          {/* <Image source={require('../../assets/logo.png')} /> */}
           <Text style={styles.title}>
             Denuncie aglomerações, faça sua parte
           </Text>

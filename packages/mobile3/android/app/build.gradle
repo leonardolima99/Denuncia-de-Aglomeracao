@@ -138,14 +138,14 @@ android {
         versionName "1.0"
 
         Properties properties = new Properties()
-        if (rootProject.file("gradle.properties").exists()) {
-            properties.load(rootProject.file("gradle.properties").newDataInputStream())
+        if (rootProject.file("local.properties").exists()) {
+            properties.load(rootProject.file("local.properties").newDataInputStream())
         }
 
         // Set the properties within `local.properties` into a `Properties` class so that values
         // within `local.properties` (e.g. Maps API key) are accessible in this file.
         // Inject the Maps API key into the manifest
-        manifestPlaceholders = [ mapsApiKey : properties.getProperty("MAPS_API_KEY", "") ]
+        manifestPlaceholders = [ mapsApiKey : properties.getProperty("MAPS_API_KEY") ]
     }
     splits {
         abi {
