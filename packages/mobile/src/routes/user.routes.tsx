@@ -7,7 +7,6 @@ import BackToMap from '../pages/BackToMap'
 import NewDenunciation from '../pages/NewDenunciation'
 
 import { RootStackParamList } from '../types/navigation'
-import { View } from 'react-native'
 
 const UserStack = createStackNavigator()
 
@@ -20,19 +19,17 @@ declare global {
 }
 
 const UserRoutes: React.FC = () => (
-  <View style={{ flex: 1, backgroundColor: 'black' }}>
-    <UserStack.Navigator
-      screenOptions={{
-        headerShown: false,
-        animationEnabled: false
-      }}
-    >
-      <UserStack.Screen name="Home" component={Home} />
-      <UserStack.Screen name="Denunciations" component={Denunciations} />
-      <UserStack.Screen name="BackToMap" component={BackToMap} />
-      <UserStack.Screen name="NewDenunciation" component={NewDenunciation} />
-    </UserStack.Navigator>
-  </View>
+  <UserStack.Navigator
+    screenOptions={{
+      headerShown: false,
+      animationEnabled: false
+    }}
+  >
+    <UserStack.Screen name="Home" component={Home} />
+    <UserStack.Screen name="Denunciations" component={Denunciations} />
+    <UserStack.Screen name="BackToMap" component={BackToMap} />
+    <UserStack.Screen name="NewDenunciation" component={NewDenunciation} />
+  </UserStack.Navigator>
 )
 
 export default UserRoutes

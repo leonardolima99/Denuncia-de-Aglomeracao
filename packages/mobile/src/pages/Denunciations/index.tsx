@@ -130,9 +130,9 @@ const Denunciations = () => {
       return 0
     }
 
-    /* navigation.navigate('NewDenunciation', {
+    navigation.navigate('NewDenunciation', {
       position: selectedPosition
-    }) */
+    })
   }
 
   function handleSignOut() {
