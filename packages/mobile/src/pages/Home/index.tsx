@@ -8,8 +8,7 @@ import {
   Text,
   StyleSheet,
   KeyboardAvoidingView,
-  Platform,
-  Image
+  Platform
 } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'

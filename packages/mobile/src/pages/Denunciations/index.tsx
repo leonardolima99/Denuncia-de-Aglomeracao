@@ -125,12 +125,12 @@ const Denunciations = () => {
   }
 
   function handleNavigateToNewDenunciation() {
-    /* if (!selectedPosition[0]) {
+    if (!selectedPosition[0]) {
       navigation.navigate('BackToMap')
-      return
+      return 0
     }
 
-    navigation.navigate('NewDenunciation', {
+    /* navigation.navigate('NewDenunciation', {
       position: selectedPosition
     }) */
   }
